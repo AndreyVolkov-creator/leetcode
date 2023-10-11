@@ -1,0 +1,31 @@
+CodeWars
+8 kyu
+-------------------------------------------------------
+Count Odd Numbers below n
+
+select n, n / 2 as res
+from oddcount
+-------------------------------------------------------
+Get Nth Even Number
+
+select n, (-2 + n*2) as res
+from ntheven
+-------------------------------------------------------
+Function 2 - squaring an argument
+
+select n, (n*n) as res
+from square
+-------------------------------------------------------
+Will you make it?
+
+select distance_to_pump, mpg, fuel_left, case when mpg*fuel_left>=distance_to_pump  then true else false end as res
+from zerofuel
+-------------------------------------------------------
+SQL Basics: Mod
+
+select mod(number1,number2) as mod
+from decimals
+-------------------------------------------------------
+Third Angle of a Triangle
+
+
