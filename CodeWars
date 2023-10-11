@@ -65,9 +65,17 @@ SQL Basics: Simple MIN / MAX
 select min(age) as age_min, max(age) as age_max
 from people
 -------------------------------------------------------
+SQL Basics: Simple WHERE and ORDER BY
 
+select *
+from people
+where age>50
+order by age desc
+-------------------------------------------------------
+SQL Basics: Simple SUM
 
-
+select sum(age) as age_sum
+from people
 
 
 
