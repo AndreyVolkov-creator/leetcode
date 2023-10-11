@@ -28,4 +28,27 @@ from decimals
 -------------------------------------------------------
 Third Angle of a Triangle
 
+select a, b, 180- (a+b) as res
+from otherangle
+-------------------------------------------------------
+Easy SQL: Square Root and Log
+
+select sqrt(number1) as root, LOG (number2) as log
+from decimals
+-------------------------------------------------------
+Easy SQL: Rounding Decimals
+
+select floor(number1) as number1, ceil(number2) as number2
+from decimals
+-------------------------------------------------------
+Collect Tuition (SQL for Beginners #4)
+
+select name, age, semester, mentor, tuition_received
+from students
+where tuition_received = false
+-------------------------------------------------------
+Register for the Party (SQL for Beginners #3)
+
+
+
 
