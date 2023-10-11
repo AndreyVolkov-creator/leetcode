@@ -49,6 +49,26 @@ where tuition_received = false
 -------------------------------------------------------
 Register for the Party (SQL for Beginners #3)
 
+insert into participants(name, age, attending)
+values('Andrey', 25, true);
+select *
+from participants
+-------------------------------------------------------
+On the Canadian Border (SQL for Beginners #2)
+
+select name, country
+from travelers
+where country != 'Canada' and country != 'Mexico' and country != 'USA'
+-------------------------------------------------------
+SQL Basics: Simple MIN / MAX
+
+select min(age) as age_min, max(age) as age_max
+from people
+-------------------------------------------------------
+
+
+
+
 
 
 
