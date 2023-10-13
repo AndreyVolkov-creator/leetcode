@@ -76,6 +76,42 @@ SQL Basics: Simple SUM
 
 select sum(age) as age_sum
 from people
+-------------------------------------------------------
+
+
+
+
+-------------------------------------------------------
+7 kyu
+-------------------------------------------------------
+Genre Analysis with PostgreSQL Arrays
+
+select distinct(unnest(genres)) as genre, count(title) as count, array_agg(title order by title) as books
+from books
+group by genre
+order by count desc, genre
+-------------------------------------------------------
+Hosts Missing Specific Software Title and Having Recent Installations
+
+select host from host_software 
+group by host
+having every(software_title != 'Title2') and max(install_date) >= current_date - interval '1 year'
+order by host
+-------------------------------------------------------
+Cats and shelves
+
+select a, b, (b - a) % 3 + (b - a) / 3 as res
+from jumps
+-------------------------------------------------------
+Vowel Count
+
+select str, length(regexp_replace(str, '[^aeiou]', '', 'g')) as res
+from getcount
+-------------------------------------------------------
+Parameterized SQL: Section Access Control
+
+
+
 
 
 
