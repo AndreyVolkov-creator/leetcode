@@ -108,7 +108,51 @@ Vowel Count
 select str, length(regexp_replace(str, '[^aeiou]', '', 'g')) as res
 from getcount
 -------------------------------------------------------
-Parameterized SQL: Section Access Control
+
+ASCII Patterns Using SQL: part 2
+
+prepare alternate_star_and_number(int) as
+SELECT
+    CASE 
+    WHEN i%2=0 THEN (i/2)::TEXT ELSE REPEAT('*',i/2+1) 
+    END AS pattern
+FROM GENERATE_SERIES(1,$1) AS t(i);
+-------------------------------------------------------
+ASCII Patterns Using SQL: part 1
+
+prepare draw_pattern(int) as
+select repeat('*', GENERATE_SERIES($1,1, -1)) as star_pattern
+-------------------------------------------------------
+Disemvowel Trolls
+
+select str, translate(str, 'aeiouAEIOU', '') as res
+from disemvowel
+-------------------------------------------------------
+Top-Scoring Students for Each Subject
+
+
+-------------------------------------------------------
+Top-Scoring Students Across All Subjects
+
+select s.student_id, s.student_name
+from students as s
+join marks as m using (student_id)
+group by s.student_id, s.student_name
+having every(m.mark_rate = (select max(mark_rate) from marks where subject_id = m.subject_id))
+order by s.student_id desc
+-------------------------------------------------------
+Triangular Treasure
+
+select n, case when n > 0 then ((n*(n+1))/2) else 0 end as res
+from triangular
+-------------------------------------------------------
+Sales Analysis for the Previous Week
+
+select *
+from sales as s
+join products as p using(product_id)
+join categories as c using(category_id)
+
 
 
 
