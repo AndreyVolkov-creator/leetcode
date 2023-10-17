@@ -148,10 +148,14 @@ from triangular
 -------------------------------------------------------
 Sales Analysis for the Previous Week
 
-select *
+select c.category_name, count(product_name) as total_products_sold, sum(amount) as total_sales_amount
 from sales as s
 join products as p using(product_id)
 join categories as c using(category_id)
+where s.sale_date >= DATE_TRUNC('week', CURRENT_DATE - INTERVAL '1 week') and s.sale_date < DATE_TRUNC('week', CURRENT_DATE)
+group by c.category_name
+order by  total_products_sold desc, total_sales_amount desc, c.category_name
+-------------------------------------------------------
 
 
 
